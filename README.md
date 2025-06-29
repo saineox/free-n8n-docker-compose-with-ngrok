@@ -39,12 +39,13 @@ git clone https://github.com/saineox/free-n8n-docker-compose-with-ngrok.git
 cd free-n8n-docker-compose-with-ngrok
 ⚙️ 2. Setup Script
 Make the install script executable and run it:
-
-bash
+```
+```bash
 Copy
 Edit
 chmod +x setup-n8n.sh
 ./setup-n8n.sh
+```
 This installs:
 
 Docker & Docker Compose
@@ -58,6 +59,7 @@ Create a .env file:
 
 env
 Copy
-Edit
+```
 NGROK_TOKEN=your_ngrok_auth_token
 NGROK_DOMAIN=peacock-golden-swift.ngrok-free.app
+```
