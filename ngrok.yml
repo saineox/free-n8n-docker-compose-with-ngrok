@@ -1,0 +1,6 @@
+version: 2
+tunnels:
+  n8n:
+    proto: http
+    addr: n8n:5678
+    domain: ${NGROK_DOMAIN}
