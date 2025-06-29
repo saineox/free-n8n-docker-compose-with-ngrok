@@ -37,12 +37,12 @@ Edit
 ```bash
 git clone https://github.com/saineox/free-n8n-docker-compose-with-ngrok.git
 cd free-n8n-docker-compose-with-ngrok
+```
 ⚙️ 2. Setup Script
 Make the install script executable and run it:
-```
+
 ```bash
-Copy
-Edit
+
 chmod +x setup-n8n.sh
 ./setup-n8n.sh
 ```
