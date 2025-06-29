@@ -18,8 +18,7 @@ free-n8n-docker-compose-with-ngrok/
 └── README.md # This guide
 
 yaml
-Copy
-Edit
+
 
 ---
 
