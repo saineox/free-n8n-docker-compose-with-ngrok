@@ -1,9 +1,53 @@
-📘 README.md
-markdown
-Copy
-Edit
-# 🚀 free-n8n-docker-compose-with-ngrok
+# 🚀 Self-Hosted n8n on AWS EC2 with Persistent Storage & Static URL
 
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com) 
+[![n8n](https://img.shields.io/badge/n8n-000000?logo=n8n&logoColor=white)](https://n8n.io) 
+[![AWS EC2](https://img.shields.io/badge/AWS_EC2-FF9900?logo=amazonaws&logoColor=white)](https://aws.amazon.com/ec2/) 
+[![ngrok](https://img.shields.io/badge/ngrok-1F1E37?logo=ngrok&logoColor=white)](https://ngrok.com)
+
+Deploy a **production-ready n8n workflow automation** server with:
+- 💾 Persistent storage for workflows
+- 🔄 Unlimited executions (free!)
+- 🌐 Static HTTPS URL via ngrok
+- 🐳 One-command Docker setup
+- 🔒 Optional basic authentication
+
+## 📖 What is n8n?
+n8n is an open-source alternative to Zapier/Make.com that lets you:
+- Connect 300+ apps without coding
+- Create complex workflows visually
+- Self-host for full data control
+- Avoid cloud service limits
+
+## 🛠️ Prerequisites
+- AWS EC2 Ubuntu instance (t2.micro works)
+- ngrok account with [reserved domain](https://dashboard.ngrok.com/cloud-edge/domains)
+- Port 5678 open in security group
+
+## 🚀 Quick Deployment
+
+```bash
+# 1. Connect to EC2
+ssh -i "your-key.pem" ubuntu@ec2-ip
+```
+
+# 2. Clone and setup
+
+git clone https://github.com/saineox/free-n8n-docker-compose-with-ngrok.git
+cd free-n8n-docker-compose-with-ngrok
+chmod +x setup-n8n.sh
+./setup-n8n.sh
+```
+
+# 3. Configure .env
+```
+echo "NGROK_TOKEN=your_token_here" > .env
+echo "NGROK_DOMAIN=your-domain.ngrok-free.app" >> .env
+
+# 4. Start services
+```
+docker compose up -d
+```
 Deploy a **self-hosted n8n** instance on AWS EC2 using **Docker Compose**, with **local folder persistence** and a **static ngrok URL**.
 
 ---
@@ -17,28 +61,6 @@ free-n8n-docker-compose-with-ngrok/<br>
 ├── setup-n8n.sh # Installs Docker, Docker Compose, ngrok, and sets up folders <br>
 └── README.md # This guide <br>
 
-yaml
-
-
----
-
-## ✅ Prerequisites
-
-- Ubuntu (e.g., AWS EC2)
-- Git installed
-- ngrok account with a **reserved domain** (e.g., `peacock-golden-swift.ngrok-free.app`)
-- AWS security group: Port **5678** inbound
-
----
-
-## 🚀 1. Clone the Repository & ⚙️ 2. Setup Script Docker & Docker Compose
-
-```bash
-git clone https://github.com/saineox/free-n8n-docker-compose-with-ngrok.git
-cd free-n8n-docker-compose-with-ngrok
-chmod +x setup-n8n.sh
-./setup-n8n.sh
-```
 
 
 🔐 3. Configure Environment
