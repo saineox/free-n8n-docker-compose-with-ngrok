@@ -54,11 +54,9 @@ ngrok
 Creates n8n_data/ folder in repo root
 
 🔐 3. Configure Environment
-Create a .env file:
+Create a .env file: in command add your Credentials 
 
-env
-Copy
 ```
-NGROK_TOKEN=your_ngrok_auth_token
-NGROK_DOMAIN=peacock-golden-swift.ngrok-free.app
+echo -e "NGROK_TOKEN=your_ngrok_auth_token\nNGROK_DOMAIN=peacock-golden-swift.ngrok-free.app" > .env
+
 ```
