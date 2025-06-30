@@ -10,12 +10,12 @@ Deploy a **self-hosted n8n** instance on AWS EC2 using **Docker Compose**, with 
 
 ## 🗂️ Repository Structure
 
-free-n8n-docker-compose-with-ngrok/
-├── docker-compose.yml # Defines n8n + ngrok services
-├── ngrok.yml # ngrok tunnel config (static domain)
-├── .env # Store NGROK_TOKEN, NGROK_DOMAIN
-├── setup-n8n.sh # Installs Docker, Docker Compose, ngrok, and sets up folders
-└── README.md # This guide
+free-n8n-docker-compose-with-ngrok/<br>
+├── docker-compose.yml # Defines n8n + ngrok services <br>
+├── ngrok.yml # ngrok tunnel config (static domain)<br>
+├── .env # Store NGROK_TOKEN, NGROK_DOMAIN <br>
+├── setup-n8n.sh # Installs Docker, Docker Compose, ngrok, and sets up folders <br>
+└── README.md # This guide <br>
 
 yaml
 
