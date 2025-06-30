@@ -17,13 +17,3 @@ services:
       - TZ=Etc/UTC
     restart: always
 
-  ngrok:
-    image: ngrok/ngrok:latest
-    depends_on:
-      - n8n
-    volumes:
-      - ./ngrok.yml:/etc/ngrok.yml:ro
-    environment:
-      - NGROK_AUTHTOKEN=${NGROK_TOKEN}
-      - NGROK_CONFIG=/etc/ngrok.yml
-    restart: always
