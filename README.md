@@ -52,8 +52,13 @@ cd free-n8n-docker-compose-with-ngrok
 chmod +x setup-n8n.sh
 ./setup-n8n.sh
 ```
-
-🔐 3. Configure Environment
+## 📝 Step 3 : Create ngrok Account
+1. Go to [ngrok Signup Page](https://dashboard.ngrok.com/signup)
+2. Sign up with email/GitHub/Google
+3. Verify your email address
+4. Get your free **authtoken** from [Dashboard](https://dashboard.ngrok.com/get-started/your-authtoken)
+   
+🔐 4. Configure Environment
 Create a .env file: in command add your Credentials 
 
 ```
@@ -64,6 +69,8 @@ echo -e "NGROK_TOKEN=your_ngrok_auth_token\nNGROK_DOMAIN=peacock-golden-swift.ng
 Spin up containers:
 ```
 docker compose up -d
+
+ngrok http --domain=peacock-golden-swift.ngrok-free.app 5678
 ```
 
 
@@ -92,6 +99,8 @@ docker-compose restart
 docker-compose logs -f
 
 ```
+
+
 
 ℹ️ Notes & Troubleshooting
 Ensure security groups allow inbound traffic on port 5678.
