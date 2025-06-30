@@ -40,7 +40,6 @@ chmod +x setup-n8n.sh
 ./setup-n8n.sh
 ```
 
-Creates n8n_data/ folder in repo root
 
 🔐 3. Configure Environment
 Create a .env file: in command add your Credentials 
@@ -49,3 +48,40 @@ Create a .env file: in command add your Credentials
 echo -e "NGROK_TOKEN=your_ngrok_auth_token\nNGROK_DOMAIN=peacock-golden-swift.ngrok-free.app" > .env
 
 ```
+
+▶️ 6. Start Services
+Spin up containers:
+
+```
+docker-compose up -d
+```
+n8n runs locally at port 5678
+
+ngrok exposes it under your reserved domain
+
+🌐 7. Access n8n
+Visit in your browser:
+```
+https://${NGROK_DOMAIN}
+You should see the n8n editor interface securely exposed.
+```
+🛑 8. Manage Services
+```
+# Stop
+
+docker-compose down
+
+# Restart
+docker-compose restart
+
+# View logs
+docker-compose logs -f
+
+```
+
+ℹ️ Notes & Troubleshooting
+Ensure security groups allow inbound traffic on port 5678.
+
+If ngrok shows errors, verify your static domain is properly reserved in the ngrok dashboard.
+
+For dynamic URLs (free plan), omit domain: from ngrok.yml and re-run.
