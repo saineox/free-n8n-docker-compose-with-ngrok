@@ -18,7 +18,7 @@ services:
     restart: always
 
   ngrok:
-    image: wernight/ngrok
+    image: ngrok/ngrok:latest
     depends_on:
       - n8n
     volumes:
