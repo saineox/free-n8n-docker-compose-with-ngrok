@@ -24,30 +24,6 @@ n8n is an open-source alternative to Zapier/Make.com that lets you:
 - ngrok account with [reserved domain](https://dashboard.ngrok.com/cloud-edge/domains)
 - Port 5678 open in security group
 
-## 🚀 Quick Deployment
-
-```bash
-# 1. Connect to EC2
-ssh -i "your-key.pem" ubuntu@ec2-ip
-```
-
-# 2. Clone and setup
-
-git clone https://github.com/saineox/free-n8n-docker-compose-with-ngrok.git
-cd free-n8n-docker-compose-with-ngrok
-chmod +x setup-n8n.sh
-./setup-n8n.sh
-```
-
-# 3. Configure .env
-```
-echo "NGROK_TOKEN=your_token_here" > .env
-echo "NGROK_DOMAIN=your-domain.ngrok-free.app" >> .env
-
-# 4. Start services
-```
-docker compose up -d
-```
 Deploy a **self-hosted n8n** instance on AWS EC2 using **Docker Compose**, with **local folder persistence** and a **static ngrok URL**.
 
 ---
@@ -62,6 +38,20 @@ free-n8n-docker-compose-with-ngrok/<br>
 └── README.md # This guide <br>
 
 
+## 🚀 Quick Deployment
+
+```bash
+# 1. Connect to EC2
+ssh -i "your-key.pem" ubuntu@ec2-ip
+```
+
+# 2. Clone and setup
+```bash
+git clone https://github.com/saineox/free-n8n-docker-compose-with-ngrok.git
+cd free-n8n-docker-compose-with-ngrok
+chmod +x setup-n8n.sh
+./setup-n8n.sh
+```
 
 🔐 3. Configure Environment
 Create a .env file: in command add your Credentials 
@@ -70,13 +60,15 @@ Create a .env file: in command add your Credentials
 echo -e "NGROK_TOKEN=your_ngrok_auth_token\nNGROK_DOMAIN=peacock-golden-swift.ngrok-free.app" > .env
 
 ```
-
 ▶️ 6. Start Services
 Spin up containers:
+```
+docker compose up -d
+```
 
-```
-docker-compose up -d
-```
+
+
+
 n8n runs locally at port 5678
 
 ngrok exposes it under your reserved domain
